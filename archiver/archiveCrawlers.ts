@@ -43,7 +43,7 @@ const ARCHIVE_SOURCE_URL = process.env.ARCHIVE_SOURCE_URL || '';
 const archiveGogleSheet = async (
   config: GoogleConfigSheets,
   name: string,
-  showStartTime: string
+  showStartTime: string,
 ) => {
   const archivePath = getArchivePath(name);
   const pictureFolder = path.join(archivePath, 'pictures');

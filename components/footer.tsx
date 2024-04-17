@@ -1,3 +1,5 @@
+import Image from 'next/legacy/image';
+import Link from 'next/link';
 import {
   AiFillFacebook,
   AiFillGithub,
@@ -5,8 +7,6 @@ import {
   AiOutlineMail,
 } from 'react-icons/ai';
 import { FaDiscord, FaTelegramPlane } from 'react-icons/fa';
-import Image from 'next/image';
-import Link from 'next/link';
 
 import { NavigationItem } from '@/contentful/client';
 
@@ -27,12 +27,13 @@ const Footer = ({ navigationItems }: FooterProps) => {
               alt="Logo of Turun Wappuradio ry"
             />
           </div>
-          <Link href="/tietosuojaseloste">
-            <a className="mt-6 text-sm text-white opacity-50">
-              © Turun Wappuradio ry
-              <br />
-              Tietosuojaseloste
-            </a>
+          <Link
+            href="/tietosuojaseloste"
+            className="mt-6 text-sm text-white opacity-50"
+          >
+            © Turun Wappuradio ry
+            <br />
+            Tietosuojaseloste
           </Link>
         </div>
       </div>
@@ -64,8 +65,8 @@ interface NavLinkProps {
 
 const NavLink = ({ slug, name }: NavLinkProps) => (
   <li key={slug} className="my-3">
-    <Link href={'/' + slug}>
-      <a className="font-bold hover:underline">{name}</a>
+    <Link href={'/' + slug} className="font-bold hover:underline">
+      {name}
     </Link>
   </li>
 );

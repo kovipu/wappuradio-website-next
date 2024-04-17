@@ -22,7 +22,7 @@ export const doesFileExist = (path: string, basename: string) => {
 export const saveArrayBufferToFile = async (
   data: ArrayBuffer,
   path: string,
-  basename: string
+  basename: string,
 ) => {
   const newFilePath = getImagePath(path, basename);
   try {

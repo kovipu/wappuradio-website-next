@@ -22,7 +22,7 @@ type SheetParserConfig = {
 };
 export const parseSheetToShowList = async (
   googleSheetData: sheets_v4.Schema$ValueRange,
-  parserConfig: SheetParserConfig
+  parserConfig: SheetParserConfig,
 ): Promise<Show[]> => {
   const {
     apiKey,
@@ -76,8 +76,8 @@ export const parseSheetToShowList = async (
       if (index > 0 && !shows[index - 1]) {
         throw new Error(
           `Failed to parse showlist sheet. Invalid data before ${JSON.stringify(
-            sheetRow
-          )}`
+            sheetRow,
+          )}`,
         );
       }
 
@@ -89,9 +89,9 @@ export const parseSheetToShowList = async (
       const isNight = color === Color.Night || getIsNightTime(startDate);
       const showColor = isNight
         ? Color.Night
-        : (color === Color.Promote || color === Color.Editorial)
-        ? Color.Promote
-        : null;
+        : color === Color.Promote || color === Color.Editorial
+          ? Color.Promote
+          : null;
 
       // Google file urls have two types:
       // from forms: https://drive.google.com/open?id=<fileId>'
@@ -119,7 +119,7 @@ export const parseSheetToShowList = async (
         color: showColor,
       });
     },
-    Promise.resolve([])
+    Promise.resolve([]),
   );
   return showList;
 };
@@ -149,7 +149,7 @@ export const fetchShowlist = async (): Promise<ShowsByDate> => {
 const downloadShowFile = async (
   fileId: string,
   fileTitle: string,
-  parserConfig: SheetParserConfig
+  parserConfig: SheetParserConfig,
 ): Promise<string> => {
   const { apiKey, fileUrlBase, localFilePath } = parserConfig;
   if (!fileId || !apiKey) {

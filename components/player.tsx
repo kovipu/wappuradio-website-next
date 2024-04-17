@@ -1,6 +1,6 @@
+import Image from 'next/legacy/image';
 import { useEffect, useState } from 'react';
 import { FiMessageSquare, FiPause, FiPlay, FiVideo } from 'react-icons/fi';
-import Image from 'next/image';
 import { format } from 'date-fns';
 
 import useShoutBoxAndVideo from '@/hooks/useShoutboxAndVideo';

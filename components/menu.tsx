@@ -19,23 +19,21 @@ const Menu = ({ navigationItems, isOpen, closeMenu }: MenuProps) => (
   >
     <ul className="px-8 pt-24">
       <li>
-        <Link href="/">
-          <a className="p-2 text-2xl">Radio</a>
+        <Link href="/" className="p-2 text-2xl">
+          Radio
         </Link>
       </li>
 
       {navigationItems.map(({ name, slug }) => (
         <li key={slug} className="my-5">
-          <Link href={`/${slug}`}>
-            <a className="p-2 text-2xl" onClick={closeMenu}>
-              {name}
-            </a>
+          <Link href={`/${slug}`} className="p-2 text-2xl" onClick={closeMenu}>
+            {name}
           </Link>
         </li>
       ))}
       <li>
-        <Link href="/arkisto">
-          <a className="p-2 text-2xl">Arkisto</a>
+        <Link href="/arkisto" className="p-2 text-2xl">
+          Arkisto
         </Link>
       </li>
     </ul>

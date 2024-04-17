@@ -16,7 +16,7 @@ interface LegacyShowList {
  * Archive S3 bucket API
  */
 export const fetchArchivedShowlist = async (
-  showlistId: string
+  showlistId: string,
 ): Promise<ShowsByDate> => {
   if (!showlistBaseUrl) {
     console.error('Arkiston polkua ei ole määritetty');

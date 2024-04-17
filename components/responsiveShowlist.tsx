@@ -67,7 +67,7 @@ export const ResponsiveShowlist = ({
   const [selectedDate, setSelectedDate] = useState<string>(
     Object.keys(showsByDate).includes(format(new Date(), 'y.M.dd'))
       ? format(new Date(), 'y.M.dd')
-      : Object.keys(showsByDate)[0]
+      : Object.keys(showsByDate)[0],
   );
 
   const setDateAndScroll = (date: string) => {

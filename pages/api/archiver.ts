@@ -14,7 +14,7 @@ const isRouteEnabled = !!process.env.ENABLE_ARCHIVER_API;
  */
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<ResponseData>
+  res: NextApiResponse<ResponseData>,
 ) {
   if (!isRouteEnabled) {
     return res.redirect('/404');

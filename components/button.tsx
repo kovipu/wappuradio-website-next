@@ -35,15 +35,14 @@ const LinkButton: FC<LinkButtonProps> = ({
   const rel = isExternal ? 'noopener noreferrer' : null;
 
   return (
-    <Link href={href}>
-      <a
-        target={target}
-        rel={rel}
-        className={`${buttonStyle} ${className || ''}`}
-        {...props}
-      >
-        {children}
-      </a>
+    <Link
+      href={href}
+      target={target}
+      rel={rel}
+      className={`${buttonStyle} ${className || ''}`}
+      {...props}
+    >
+      {children}
     </Link>
   );
 };

@@ -22,14 +22,14 @@ export interface NavigationItem {
 
 const fetchNavigationItems = async (): Promise<NavigationItem[]> => {
   const navigationItems = await fetchContent<NavigationItemsQuery>(
-    NavigationItemsDocument
+    NavigationItemsDocument,
   );
   return navigationItems.navigationCollection.items[0].pagesCollection.items;
 };
 
 const fetchContent = async <T>(
   query: DocumentNode,
-  variables?: any
+  variables?: any,
 ): Promise<T> => {
   try {
     const _apolloClient = apolloClient ?? createApolloClient();
@@ -38,7 +38,7 @@ const fetchContent = async <T>(
     return data;
   } catch (error) {
     console.error(
-      `There was a problem retrieving entries with the query ${query}`
+      `There was a problem retrieving entries with the query ${query}`,
     );
     console.error(error);
   }
